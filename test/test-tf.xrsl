@@ -1,0 +1,22 @@
+&
+(rsl_substitution=("JOBID" "test-tf"))
+(count = 8)
+(countpernode = 8)
+(environment=
+( "OMP_NUM_THREADS" "8" )
+)
+(jobname = $(JOBID))
+(inputfiles =
+   ($(JOBID).tar.gz "")
+   ($(JOBID).sh "")
+)
+(executable = $(JOBID).sh)
+(outputfiles = ($(JOBID).out.tar.gz ""))
+(stdout=$(JOBID).out.log)
+(stderr=$(JOBID).err.log)
+(cputime="2 hours")
+(gmlog=log)
+(memory=1000)
+(runTimeEnvironment = "APPS/BASE/TENSORFLOW-GPU")
+(walltime="2 hours")
+
